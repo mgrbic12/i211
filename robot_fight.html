@@ -1,0 +1,42 @@
+
+
+
+
+
+html = """
+<html>
+	<head>
+		<title>Robot Fight!</title>
+	</head>"""
+
+try:
+	SQL = "SELECT Name FROM Robot;"
+	cursor.execute(SQL)
+	names = cursor.fetchall()
+except Exception as e:
+	print('<p>Something went wrong with the SQL!</p>')
+	print(SQL, "Error:", e)
+else:
+	if not form.getfirst("robot1", None):
+		html += """<body>
+		<h1>Choose two robots to face off!</h1>
+		<form method="post" action="robot_fight.cgi">
+		<h3>Please select robots:</h3>
+		<p>Robot Name:
+		<select name="robot1">"""
+
+for name in names:
+	html +="<option>"+name[0]+"</option>"
+	html+="""</select></p>
+	<input type="submit" value="Fight!"/>
+	</form>
+	"""
+else:
+	robot1 = form.getfirst("robot1")
+	robot2 = form.gefirst("robot2")
+	html += robot_fight(cursor,robot1,robot2)
+html += """</body>
+</html>"""
+print(html)
+
+print(html)

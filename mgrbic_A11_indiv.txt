@@ -1,0 +1,29 @@
+
+
+#Create a table called items
+
+CREATE TABLE Items
+(Item varchar(25));
+
+#Add 5 items to the list
+
+INSERT INTO Items (Item)
+VALUES('Computer'),
+('Textbook'),
+('Iphone'),
+('Playstation'),
+('Xbox');
+
+#Create Table called Deliveries
+
+CREATE TABLE Deliveries
+(DeliveryID int(11) NOT NULL UNIQUE,
+Item varchar(50) NOT NULL,
+Cost int(11) DEFAULT '0',
+Method varchar(30),
+Shipping int(11) DEFAULT '10');
+
+
+#Links to websites
+http://cgi.soic.indiana.edu/~mgrbic/deliverySelect.cgi
+http://cgi.soic.indiana.edu/~mgrbic/deliveryTable.cgi

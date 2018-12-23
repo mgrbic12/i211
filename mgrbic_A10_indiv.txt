@@ -1,0 +1,46 @@
+#Max Grbic
+#Group number: 14
+
+##### (Q 1&2)Create a table called 'Singer' and 'Tour'#####
+
+CREATE TABLE Singer
+    -> (SingerID int UNIQUE,
+    -> FirstName varchar(30),
+    -> LastName varchar(30),
+    -> Label varchar(30),
+    -> Salary int,
+    -> Style varchar(30));
+
+CREATE TABLE Tour
+    -> (TourID int UNIQUE,
+    -> TourName varchar(30),
+    -> Begin date,
+    -> End date,
+    -> Headliner int);
+
+#####Both work the same / one set includes the command line from PuTTY#####
+
+MariaDB [i211f18_mgrbic]> CREATE TABLE Singer
+    -> (SingerID int UNIQUE,
+    -> FirstName varchar(30),
+    -> LastName varchar(30),
+    -> Label varchar(30),
+    -> Salary int,
+    -> Style varchar(30));
+
+MariaDB [i211f18_mgrbic]> CREATE TABLE Tour
+    -> (TourID int UNIQUE,
+    -> TourName varchar(30),
+    -> Begin date,
+    -> End date,
+    -> Headliner int);
+	
+ ##### (Q 3)Write a statement that will add an individual to the 'Singer' table#####
+ 
+ MariaDB [i211f18_mgrbic]> INSERT INTO Singer
+    -> VALUES(2, 'Calvin', 'Harris', 'Sony', 43000000, 'Dance');
+ 
+ ##### (Q 4)Write a statement that will show all the singers who have a salary greater than 250000 on the Sony label#####
+ 
+ MariaDB [i211f18_mgrbic]> SELECT * FROM Singer
+    -> WHERE Salary > 250000 AND Label = 'Sony';
