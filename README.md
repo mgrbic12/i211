@@ -1,2 +1,2 @@
 # i211
-Course work within i211 Information Infrastructure II
+Course work completed within i211, Information Infrastructure II.
